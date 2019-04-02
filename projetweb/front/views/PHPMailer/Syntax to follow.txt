@@ -1,0 +1,19 @@
+---PHP---
+include "PHPMailer/src/PHPMailer.php";
+include "PHPMailer/src/Exception.php";
+include "PHPMailer/src/SMTP.php";
+$mail = new PHPMailer\PHPMailer\PHPMailer();
+            $mail->IsSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->Port= '465';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'GMAIL';
+            $mail->Password = 'PASSWORD';
+            $mail->SMTPSecure = 'ssl';
+            $mail->From = 'YOUR MAIL';
+            $mail->FromName = 'NAME';
+            $mail->addAddress('MAIL TO SEND TO', 'Clients');
+            $mail->WordWrap = 50;
+            $mail->IsHtml(true);
+            $mail->Subject = 'Nouvel Article dans notre catalogue';
+            $mail->Body = '';
